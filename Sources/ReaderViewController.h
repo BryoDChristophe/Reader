@@ -43,4 +43,6 @@
 
 - (instancetype)initWithReaderDocument:(ReaderDocument *)object;
 
+- (instancetype)initWithReaderDocument:(ReaderDocument *)object color:(UIColor *)mainColor;
+
 @end

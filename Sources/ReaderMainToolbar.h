@@ -47,6 +47,7 @@
 
 @property (nonatomic, weak, readwrite) id <ReaderMainToolbarDelegate> delegate;
 
+- (instancetype)initWithFrame:(CGRect)frame document:(ReaderDocument *)document color:(UIColor *)mainColor;
 - (instancetype)initWithFrame:(CGRect)frame document:(ReaderDocument *)document;
 
 - (void)setBookmarkState:(BOOL)state;

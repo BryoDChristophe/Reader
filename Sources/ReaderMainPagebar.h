@@ -45,6 +45,7 @@
 @property (nonatomic, weak, readwrite) id <ReaderMainPagebarDelegate> delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame document:(ReaderDocument *)object;
+- (instancetype)initWithFrame:(CGRect)frame document:(ReaderDocument *)object color:(UIColor *)mainColor;
 
 - (void)updatePagebar;
 

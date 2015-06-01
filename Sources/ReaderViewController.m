@@ -65,6 +65,8 @@
 	NSDate *lastHideTime;
 
 	BOOL ignoreDidScroll;
+    
+    UIColor *color;
 }
 
 #pragma mark - Constants
@@ -286,6 +288,11 @@
 
 #pragma mark - UIViewController methods
 
+- (instancetype)initWithReaderDocument:(ReaderDocument *)object color:(UIColor *)mainColor {
+    color = mainColor;
+    return [self initWithReaderDocument:object];
+}
+
 - (instancetype)initWithReaderDocument:(ReaderDocument *)object
 {
 	if ((self = [super initWithNibName:nil bundle:nil])) // Initialize superclass
@@ -311,6 +318,8 @@
 			self = nil;
 		}
 	}
+    
+//    self.ReaderMainPagebar TODO COLOR
 
 	return self;
 }
@@ -355,13 +364,13 @@
 	[self.view addSubview:theScrollView];
 
 	CGRect toolbarRect = viewRect; toolbarRect.size.height = TOOLBAR_HEIGHT;
-	mainToolbar = [[ReaderMainToolbar alloc] initWithFrame:toolbarRect document:document]; // ReaderMainToolbar
+	mainToolbar = [[ReaderMainToolbar alloc] initWithFrame:toolbarRect document:document color:color]; // TODO COLOR ReaderMainToolbar
 	mainToolbar.delegate = self; // ReaderMainToolbarDelegate
 	[self.view addSubview:mainToolbar];
 
 	CGRect pagebarRect = self.view.bounds; pagebarRect.size.height = PAGEBAR_HEIGHT;
 	pagebarRect.origin.y = (self.view.bounds.size.height - pagebarRect.size.height);
-	mainPagebar = [[ReaderMainPagebar alloc] initWithFrame:pagebarRect document:document]; // ReaderMainPagebar
+	mainPagebar = [[ReaderMainPagebar alloc] initWithFrame:pagebarRect document:document color:color]; // TODO COLOR ReaderMainPagebar
 	mainPagebar.delegate = self; // ReaderMainPagebarDelegate
 	[self.view addSubview:mainPagebar];
 
