@@ -50,6 +50,8 @@
 
 	BOOL updateBookmarked;
 	BOOL showBookmarked;
+    
+    UIColor *color;
 }
 
 #pragma mark - Constants
@@ -86,6 +88,11 @@
 	return self;
 }
 
+- (instancetype)initWithReaderDocument:(ReaderDocument *)object color:(UIColor *)mainColor {
+    color = mainColor;
+    return [self initWithReaderDocument:object];
+}
+
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
@@ -116,7 +123,7 @@
 
 	CGRect toolbarRect = scrollViewRect; // Toolbar frame
 	toolbarRect.size.height = TOOLBAR_HEIGHT; // Default toolbar height
-	mainToolbar = [[ThumbsMainToolbar alloc] initWithFrame:toolbarRect title:toolbarTitle]; // ThumbsMainToolbar
+	mainToolbar = [[ThumbsMainToolbar alloc] initWithFrame:toolbarRect title:toolbarTitle color:color]; // ThumbsMainToolbar
 	mainToolbar.delegate = self; // ThumbsMainToolbarDelegate
 	[self.view addSubview:mainToolbar];
 

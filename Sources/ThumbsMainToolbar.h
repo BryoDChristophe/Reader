@@ -43,5 +43,7 @@
 @property (nonatomic, weak, readwrite) id <ThumbsMainToolbarDelegate> delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title;
+- (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title color:(UIColor *)mainColor;
+
 
 @end

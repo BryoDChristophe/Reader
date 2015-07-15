@@ -56,6 +56,11 @@
 	return [self initWithFrame:frame title:nil];
 }
 
+- (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title color:(UIColor *)mainColor {
+    self.backgroundColor = mainColor;
+    return [self initWithFrame:frame title:title];
+}
+
 - (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title
 {
 	if ((self = [super initWithFrame:frame]))
