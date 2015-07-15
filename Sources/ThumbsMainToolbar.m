@@ -65,8 +65,9 @@
 #if (READER_FLAT_UI == TRUE) // Option
 		UIImage *buttonH = nil; UIImage *buttonN = nil;
 #else
-		UIImage *buttonH = [[UIImage imageNamed:@"Reader-Button-H"] stretchableImageWithLeftCapWidth:5 topCapHeight:0];
-		UIImage *buttonN = [[UIImage imageNamed:@"Reader-Button-N"] stretchableImageWithLeftCapWidth:5 topCapHeight:0];
+        NSBundle *bundleHere = [NSBundle bundleForClass:self.class];
+        UIImage *buttonH = [[UIImage imageNamed:@"Reader-Button-H" inBundle:bundleHere compatibleWithTraitCollection:nil] stretchableImageWithLeftCapWidth:5 topCapHeight:0];
+        UIImage *buttonN = [[UIImage imageNamed:@"Reader-Button-N" inBundle:bundleHere compatibleWithTraitCollection:nil] stretchableImageWithLeftCapWidth:5 topCapHeight:0];
 #endif // end of READER_FLAT_UI Option
 
 		BOOL largeDevice = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad);
@@ -102,8 +103,9 @@
 
 		CGFloat showControlX = (viewWidth - (SHOW_CONTROL_WIDTH + buttonSpacing));
 
-		UIImage *thumbsImage = [UIImage imageNamed:@"Reader-Thumbs"];
-		UIImage *bookmarkImage = [UIImage imageNamed:@"Reader-Mark-Y"];
+        NSBundle *bundleHere = [NSBundle bundleForClass:self.class];
+		UIImage *thumbsImage = [UIImage imageNamed:@"Reader-Thumbs" inBundle:bundleHere compatibleWithTraitCollection:nil];
+		UIImage *bookmarkImage = [UIImage imageNamed:@"Reader-Mark-Y" inBundle:bundleHere compatibleWithTraitCollection:nil];
 		NSArray *buttonItems = [NSArray arrayWithObjects:thumbsImage, bookmarkImage, nil];
 
 		BOOL useTint = [self respondsToSelector:@selector(tintColor)]; // iOS 7 and up
