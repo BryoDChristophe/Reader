@@ -734,7 +734,7 @@
 
 	if (printInteraction != nil) [printInteraction dismissAnimated:NO];
 
-	ThumbsViewController *thumbsViewController = [[ThumbsViewController alloc] initWithReaderDocument:document];
+	ThumbsViewController *thumbsViewController = [[ThumbsViewController alloc] initWithReaderDocument:document color:color];
 
 	thumbsViewController.title = self.title; thumbsViewController.delegate = self; // ThumbsViewControllerDelegate
 
