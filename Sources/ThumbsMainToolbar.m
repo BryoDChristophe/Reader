@@ -26,7 +26,9 @@
 #import "ReaderConstants.h"
 #import "ThumbsMainToolbar.h"
 
-@implementation ThumbsMainToolbar
+@implementation ThumbsMainToolbar {
+    UIColor *color;
+}
 
 #pragma mark - Constants
 
@@ -57,7 +59,7 @@
 }
 
 - (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title color:(UIColor *)mainColor {
-    self.backgroundColor = mainColor;
+    color = mainColor;
     return [self initWithFrame:frame title:title];
 }
 
@@ -67,6 +69,8 @@
 	{
 		CGFloat viewWidth = self.bounds.size.width; // Toolbar view width
 
+        self.backgroundColor = color;
+        
 #if (READER_FLAT_UI == TRUE) // Option
 		UIImage *buttonH = nil; UIImage *buttonN = nil;
 #else
