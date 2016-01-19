@@ -37,6 +37,7 @@
 @property (nonatomic, strong, readonly) NSString *password;
 @property (nonatomic, strong, readonly) NSString *fileName;
 @property (nonatomic, strong, readonly) NSURL *fileURL;
+@property (nonatomic, strong) NSString *fileName_to_show;
 
 @property (nonatomic, readonly) BOOL canEmail;
 @property (nonatomic, readonly) BOOL canExport;
@@ -46,6 +47,7 @@
 
 + (ReaderDocument *)unarchiveFromFileName:(NSString *)filePath password:(NSString *)phrase;
 
+- (instancetype)initWithFilePath:(NSString *)filePath name:(NSString *)name password:(NSString *)phrase;
 - (instancetype)initWithFilePath:(NSString *)filePath password:(NSString *)phrase;
 
 - (BOOL)archiveDocumentProperties;

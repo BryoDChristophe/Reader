@@ -189,6 +189,13 @@
 
 #pragma mark - ReaderDocument instance methods
 
+- (instancetype)initWithFilePath:(NSString *)filePath name:(NSString *)name password:(NSString *)phrase {
+    self.fileName_to_show = name;
+    return [self initWithFilePath:filePath password:phrase];
+}
+
+
+
 - (instancetype)initWithFilePath:(NSString *)filePath password:(NSString *)phrase
 {
 	if ((self = [super init])) // Initialize superclass first

@@ -249,7 +249,7 @@
             titleLabel.backgroundColor = [UIColor clearColor];
             titleLabel.adjustsFontSizeToFitWidth = YES;
             titleLabel.minimumScaleFactor = 0.75f;
-            titleLabel.text = [document.fileName stringByDeletingPathExtension];
+            titleLabel.text = document.fileName_to_show; //[document.fileName stringByDeletingPathExtension];
 #if (READER_FLAT_UI == FALSE) // Option
             titleLabel.shadowColor = [UIColor colorWithWhite:0.75f alpha:1.0f];
             titleLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
