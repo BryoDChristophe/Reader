@@ -188,6 +188,7 @@
                     emailButton.exclusiveTouch = YES;
                     
                     [self addSubview:emailButton]; titleWidth -= (iconButtonWidth + buttonSpacing);
+                    emailButton.hidden = true;
                 }
             }
         }
@@ -214,6 +215,7 @@
                 printButton.exclusiveTouch = YES;
                 
                 [self addSubview:printButton]; titleWidth -= (iconButtonWidth + buttonSpacing);
+                printButton.hidden = true;
             }
         }
         
@@ -233,6 +235,7 @@
             exportButton.exclusiveTouch = YES;
             
             [self addSubview:exportButton]; titleWidth -= (iconButtonWidth + buttonSpacing);
+            exportButton.hidden = true;
         }
         
         if (largeDevice == YES) // Show document filename in toolbar
